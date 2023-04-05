@@ -13,8 +13,8 @@ def solution(p: float, x: np.array) -> tuple:
     alpha = 1 - p
     n=len(x)
     s2=np.var(x, ddof=1)
-    chi1=chi2.ppf(alpha/2, df=n-1)
-    chi2=chi2.ppf(1-alpha/2, df=n-1)
-    left = np.sqrt((n-1)*s2/chi2)
-    right = np.sqrt((n-1)*s2/chi1)   
+    chi_1=chi2.ppf(alpha/2, df=n-1)
+    chi_2=chi2.ppf(1-alpha/2, df=n-1)
+    left = np.sqrt((n-1)*s2/chi_2)
+    right = np.sqrt((n-1)*s2/chi_1)   
     return (left, right)
