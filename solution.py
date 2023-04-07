@@ -14,12 +14,8 @@ def solution(p: float, x: np.array) -> tuple:
     alpha = 1 - p    
     #x_new = np.array([el**2 for el in x])
     x2_mean = np.mean(x**2)
- #   chi2_2n = chi2(df = 2*n)    
- #   chi2_left = chi2_2n.ppf(1 - alpha/2, df = 2*n) 
- #   chi2_right = chi2_2n.ppf(alpha/2, df = 2*n)
-    
     chi2_left = chi2.ppf(1 - alpha/2, df = 2*n) 
     chi2_right = chi2.ppf(alpha/2, df = 2*n)
-    left =np.sqrt(n * x2_mean/(chi2_left * 14))
-    right = np.sqrt(n * x2_mean/(chi2_right * 14))
+    left =np.sqrt(n * x2_mean/(chi2_left * 45))
+    right = np.sqrt(n * x2_mean/(chi2_right * 45))
     return left, right
